@@ -1,5 +1,5 @@
 // Import model and schema from mongoose
-const {model, Schema} = require('mongoose');
+const {model, Schema, Types} = require('mongoose');
 const dayjs = require('dayjs')
 
 const reactionSchema = new Schema({
@@ -34,10 +34,5 @@ const reactionSchema = new Schema({
     }
 })
 
-// thoughtSchema.virtual('reactionCount').get(function() {
-//     return this.reactions.length
-// })
 
-const Reaction = model('reaction', reactionSchema)
-
-module.exports = Reaction
+module.exports = reactionSchema

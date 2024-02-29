@@ -13,13 +13,13 @@ const connection = require('./config/connection');
 // Require pi_routes router
 // const { api_routes } = require('./routes');
 
+const user_routes = require('./routes/user_route')
+
 // Open Middleware channel for json
 app.use(express.json());
 
 // Load Routes
-app.use('/api', [
-  api_routes
-]);
+app.use('/api', user_routes);
 
 //Use the connection 'on' method to wait until the database connection has established before runnin gyour app.listen
 connection.on('open', () => {

@@ -1,6 +1,7 @@
 // Import model and schema from mongoose
 const {model, Schema} = require('mongoose');
 const dayjs = require('dayjs')
+const reactionSchema = require('./Reaction')
 
 const thoughtSchema = new Schema({
     thought: {
@@ -23,7 +24,7 @@ const thoughtSchema = new Schema({
         required: true
     },
 
-    reactions: [{}]
+    reactions: [reactionSchema]
 }, {
     toJSON: {
         virtuals: true
